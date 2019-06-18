@@ -9,7 +9,7 @@ def get_prefix(bot, message):
     return commands.when_mentioned_or(*prefixes)(bot, message)
 
 # Define all of our cogs
-initial_extensions = [   'cogs.loader'
+initial_extensions = [   'cogs.roles'
                      ]
 
 bot = commands.Bot(command_prefix=get_prefix)
