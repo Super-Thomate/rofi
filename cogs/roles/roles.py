@@ -74,11 +74,11 @@ class Roles(commands.Cog):
         await after.edit(nick= get_new_nick (after))
       except Exception as e:
         print (f"ERROR: {type(e).__name__} - {e}")
-  
+  """
   @commands.command(name="roles")
   async def print_roles(self, ctx, *, member: discord.Member = None):
     member = member or ctx.author
     for role in member.roles:
       if role.id == 494812563016777729:
         print (f"{member.name} as role everyone")
-  
+  """
