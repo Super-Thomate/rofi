@@ -5,8 +5,8 @@ import rolesconfig
 class Roles(commands.Cog):
   def __init__(self, bot):
     self.bot = bot
-    # self.roles = rolesconfig.roles
-    self.roles = rolesconfig.roles_dev
+    self.roles = rolesconfig.roles
+    # self.roles = rolesconfig.roles_dev
 
   @commands.Cog.listener('on_member_update')
   async def handle_update(self, before, after):
