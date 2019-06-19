@@ -12,7 +12,17 @@ class Roles(commands.Cog):
         we only need to know to continue if
         a role is updated
     """
+    def has_role (member, role_id):
+      for role in member.roles:
+        if role.id == role_id:
+          return True
+      return False
+    
     return
   @commands.command(name="roles")
-  async def print_roles(self, ctx):
-    print (ctx.author.roles)
+  async def print_roles(self, ctx, *, member: discord.Member = None):
+    member = member or ctx.author
+    for role in member.roles:
+      if role.id == 494812563016777729:
+        print (f"{member.name} as role everyone")
+  
