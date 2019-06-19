@@ -11,8 +11,8 @@ class Roles(commands.Cog):
   @commands.Cog.listener('on_member_update')
   async def handle_update(self, before, after):
     """ Triggered every time a user is updated
-        we only need to know to continue if
-        a role is updated
+        we only need to do something if
+        roles are updated
     """
     def has_role (member, role_id):
       for role in member.roles:
