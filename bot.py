@@ -31,7 +31,7 @@ async def on_ready():
   print(discord.__version__)
   print('------')
   try:
-    await bot.change_presence(activity=discord.Game(name="spooky scary skeleton"))
+    await bot.change_presence(activity=discord.Game(name="team management"))
   except TypeError as type_err:
     print ("Error TypeError : {}".format(type_err))
     sys.exit(0)
