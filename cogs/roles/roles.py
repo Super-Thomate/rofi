@@ -20,15 +20,28 @@ class Roles(commands.Cog):
           return True
       return False
     def get_new_nick (member):
+      first = True
       new_nick = member.display_name.replace('🔥','').replace('⭐','').replace('💖','').replace ('🚋', '')
       if has_role (member, self.roles["ar"]):
-        new_nick += " 🔥"
+        if first:
+          new_nick += " "
+        new_nick += "🔥"
+        first = False
       if has_role (member, self.roles["suf"]):
-        new_nick += " ⭐"
+        if first:
+          new_nick += " "
+        new_nick += "⭐"
+        first = False
       if has_role (member, self.roles["star"]):
-        new_nick += " 💖"
+        if first:
+          new_nick += " "
+        new_nick += "💖"
+        first = False
       if has_role (member, self.roles["train"]):
-        new_nick += " 🚋"
+        if first:
+          new_nick += " "
+        new_nick += "🚋"
+        first = False
       return new_nick
     if (     not has_role (before, self.roles["work_team"])
          and not has_role (after, self.roles["work_team"])
