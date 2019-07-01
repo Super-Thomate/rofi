@@ -20,13 +20,15 @@ class Roles(commands.Cog):
           return True
       return False
     def get_new_nick (member):
-      new_nick = member.display_name.replace('🔥','').replace('⭐','').replace('💖','')
+      new_nick = member.display_name.replace('🔥','').replace('⭐','').replace('💖','').replace ('🚋', '')
       if has_role (member, self.roles["ar"]):
         new_nick += " 🔥"
       if has_role (member, self.roles["suf"]):
         new_nick += " ⭐"
       if has_role (member, self.roles["star"]):
         new_nick += " 💖"
+      if has_role (member, self.roles["train"]):
+        new_nick += " 🚋"
       return new_nick
     if (     not has_role (before, self.roles["work_team"])
          and not has_role (after, self.roles["work_team"])
@@ -63,9 +65,11 @@ class Roles(commands.Cog):
     if (    (not has_role (before, self.roles["ar"])   and has_role (after, self.roles["ar"]))
          or (not has_role (before, self.roles["suf"])  and has_role (after, self.roles["suf"])) 
          or (not has_role (before, self.roles["star"]) and has_role (after, self.roles["star"]))
+         or (not has_role (before, self.roles["train"]) and has_role (after, self.roles["train"]))
          or (has_role (before, self.roles["ar"])   and not has_role (after, self.roles["ar"]))
          or (has_role (before, self.roles["suf"])  and not has_role (after, self.roles["suf"]))
          or (has_role (before, self.roles["star"]) and not has_role (after, self.roles["star"]))
+         or (has_role (before, self.roles["train"]) and not has_role (after, self.roles["train"]))
        ):
       """ add/remove emoji
       """
